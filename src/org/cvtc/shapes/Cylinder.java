@@ -4,17 +4,38 @@ import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
+/**
+ * Cylinder representation.  Child of Shape.
+ * @author Andrew Kersten
+ */
 public class Cylinder extends Shape
 {
+    
+	/**
+	 * The radius of the cylinder.
+	 */
 	private float radius;
+	
+	/**
+	 *  The height of the cylinder.
+	 */
 	private float height;
 
+	/**
+	 * Get the radius of the cylinder.  Guaranteed to be greater than or equal to zero.
+	 * @return the radius of the cylinder
+	 */
 	public float getRadius()
     {
         return radius;
     }
 
-    public void setRadius(float radius)
+	/**
+	 * Set the radius of the cylinder.  Radius must not be less than zero.
+	 * @param radius the radius of the cylinder
+	 * @throws IllegalArgumentException if height is less than zero
+	 */
+	private void setRadius(float radius)
     {
         if (radius < 0)
         {
@@ -24,12 +45,21 @@ public class Cylinder extends Shape
         this.radius = radius;
     }
 
+    /**
+     * Get the height of the cylinder.  Guaranteed to be greater than or equal to zero.
+     * @return the height of the cylinder
+     */
     public float getHeight()
     {
         return height;
     }
 
-    public void setHeight(float height)
+    /**
+     * Set the height of the cylinder.  Height must not be less than zero.
+     * @param height the height of the cylinder
+     * @throws IllegalArgumentException if height is less than zero
+     */
+    private void setHeight(float height)
     {
         if (height < 0)
         {
@@ -39,6 +69,11 @@ public class Cylinder extends Shape
         this.height = height;
     }
     
+    /**
+     * Initialize a cylinder with radius radius and height height.
+     * @param radius the radius of the cylinder
+     * @param height the height of the cylinder
+     */
     public Cylinder(float radius, float height)
     {
         setRadius(radius);
@@ -68,6 +103,7 @@ public class Cylinder extends Shape
 	    JOptionPane.showMessageDialog(null, toString());
 	}
 	
+	// Generate the textual representation of the cylinder to be rendered.
 	@Override
     public String toString()
     {

@@ -4,16 +4,32 @@ import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
+/**
+ * Sphere representation.  Child of Shape.
+ * @author Andrew Kersten
+ */
 public class Sphere extends Shape
 {
+    /**
+     * The radius of the sphere.
+     */
     private float radius;
 	
+	/**
+	 * Get the radius of the sphere.
+	 * @return the radius of the sphere
+	 */
 	public float getRadius()
 	{
 		return radius;
 	}
 
-	public void setRadius(float radius)
+	/**
+	 * Set the radius of the sphere.  Radius must not be less than zero.
+	 * @param radius radius of the sphere
+	 * @throws IllegalArgumentException if radius is less than zero
+	 */
+	private void setRadius(float radius)
 	{
 		if (radius < 0)
 		{
@@ -23,6 +39,10 @@ public class Sphere extends Shape
 		this.radius = radius;
 	}
 	
+	/**
+	 * Initialize a sphere with a radius of radius.
+	 * @param radius the radius of the sphere
+	 */
 	public Sphere(float radius)
 	{
 		setRadius(radius);
@@ -48,6 +68,7 @@ public class Sphere extends Shape
 		JOptionPane.showMessageDialog(null, toString());
 	}
 	
+	// Generate the textual representation of the sphere to be rendered.
 	@Override
 	public String toString()
 	{
