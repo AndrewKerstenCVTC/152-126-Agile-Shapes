@@ -114,7 +114,7 @@ public class Cuboid extends Shape
     public float surfaceArea()
     {
         // Formula surface area: 2(dw + dh + hw)
-        return 2.0f * (getDepth() * getWidth() + getDepth() * getHeight() + getHeight() + getWidth());
+        return 2.0f * (getDepth() * getWidth() + getDepth() * getHeight() + getHeight() * getWidth());
     }
 
     @Override
