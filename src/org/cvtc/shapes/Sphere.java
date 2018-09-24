@@ -2,13 +2,11 @@ package org.cvtc.shapes;
 
 import java.text.DecimalFormat;
 
-import javax.swing.JOptionPane;
-
 /**
  * Sphere representation.  Child of Shape.
  * @author Andrew Kersten
  */
-public class Sphere extends Shape
+public class Sphere extends Shape implements IRenderer
 {
     /**
      * The radius of the sphere.
@@ -43,8 +41,10 @@ public class Sphere extends Shape
 	 * Initialize a sphere with a radius of radius.
 	 * @param radius the radius of the sphere
 	 */
-	public Sphere(float radius)
+	public Sphere(IDialog messageBox, float radius)
 	{
+	    super(messageBox);
+	    
 		setRadius(radius);
 	}
 	
@@ -61,11 +61,10 @@ public class Sphere extends Shape
 		// Formula for volume: (4/3)(pi)r^3
 		return (4.0f / 3.0f) * (float)Math.PI * (float)Math.pow(getRadius(), 3);
 	}
-
-	@Override
-	public void render()
+	
+	public int render()
 	{
-		JOptionPane.showMessageDialog(null, toString());
+	    return getMessageBox().show(toString(), "Sphere");
 	}
 	
 	// Generate the textual representation of the sphere to be rendered.

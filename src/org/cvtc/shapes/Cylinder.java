@@ -2,13 +2,11 @@ package org.cvtc.shapes;
 
 import java.text.DecimalFormat;
 
-import javax.swing.JOptionPane;
-
 /**
  * Cylinder representation.  Child of Shape.
  * @author Andrew Kersten
  */
-public class Cylinder extends Shape
+public class Cylinder extends Shape implements IRenderer
 {
     
 	/**
@@ -74,8 +72,10 @@ public class Cylinder extends Shape
      * @param radius the radius of the cylinder
      * @param height the height of the cylinder
      */
-    public Cylinder(float radius, float height)
+    public Cylinder(IDialog messageBox, float radius, float height)
     {
+        super(messageBox);
+        
         setRadius(radius);
         setHeight(height);
     }
@@ -96,12 +96,11 @@ public class Cylinder extends Shape
 		// Formula for volume: (pi)r^2h
         return (float)Math.PI * (float)Math.pow(getRadius(), 2) * getHeight();
 	}
-
-	@Override
-	public void render()
-	{
-	    JOptionPane.showMessageDialog(null, toString());
-	}
+    
+    public int render()
+    {
+        return getMessageBox().show(toString(), "Cylinder");
+    }
 	
 	// Generate the textual representation of the cylinder to be rendered.
 	@Override

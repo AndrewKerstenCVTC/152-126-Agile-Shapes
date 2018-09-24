@@ -6,6 +6,23 @@ package org.cvtc.shapes;
  */
 public abstract class Shape
 {
+    private IDialog messageBox;
+    
+    protected IDialog getMessageBox()
+    {
+        return messageBox;
+    }
+    
+    private void setMessageBox(IDialog messageBox)
+    {
+        this.messageBox = messageBox;
+    }
+    
+    public Shape(IDialog messageBox)
+    {
+        setMessageBox(messageBox);
+    }
+    
 	/**
 	 * Returns a float representing the surface area of the shape.
 	 * @return the surface area of the shape
@@ -17,9 +34,4 @@ public abstract class Shape
 	 * @return the volume of the shape
 	 */
 	public abstract float volume();
-	
-	/**
-	 * Displays the shape's dimensions, surface area, and volume in a message box.
-	 */
-	public abstract void render();
 }

@@ -9,9 +9,9 @@ public class ShapesTest
 	public static void main(String[] args)
 	{
 	    // Initialize objects
-		Sphere sphere = new Sphere(4);
-		Cylinder cylinder = new Cylinder(3, 5);
-		Cuboid cuboid = new Cuboid(3, 4, 5);
+		Sphere sphere = new Sphere(new MessageBox(), 4);
+		Cylinder cylinder = new Cylinder(new MessageBox(), 3, 5);
+		Cuboid cuboid = new Cuboid(new MessageBox(), 3, 4, 5);
 		
 		// Render objects
 		sphere.render();

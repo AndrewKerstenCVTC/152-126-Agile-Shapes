@@ -2,13 +2,11 @@ package org.cvtc.shapes;
 
 import java.text.DecimalFormat;
 
-import javax.swing.JOptionPane;
-
 /**
  * Cuboid representation.  Child of Shape.
  * @author Andrew Kersten
  */
-public class Cuboid extends Shape
+public class Cuboid extends Shape implements IRenderer
 {
     /**
      * The width of the cuboid.
@@ -103,8 +101,10 @@ public class Cuboid extends Shape
      * @param height the height of the cylinder
      * @param depth the depth of the cylinder
      */
-    public Cuboid(float width, float height, float depth)
+    public Cuboid(IDialog messageBox, float width, float height, float depth)
     {
+        super(messageBox);
+        
         setWidth(width);
         setHeight(height);
         setDepth(depth);
@@ -123,11 +123,10 @@ public class Cuboid extends Shape
         // Formula volume: whd
         return getWidth() * getHeight() * getDepth();
     }
-
-    @Override
-    public void render()
+    
+    public int render()
     {
-        JOptionPane.showMessageDialog(null, toString());
+        return getMessageBox().show(toString(), "Cuboid");
     }
     
     // Generate the textual representation of the cuboid to be rendered.
