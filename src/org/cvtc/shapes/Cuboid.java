@@ -95,6 +95,15 @@ public class Cuboid extends Shape implements IRenderer
         this.depth = depth;
     }
     
+    public Cuboid(IDialog messageBox)
+    {
+        super(messageBox);
+        
+        setWidth(0);
+        setHeight(0);
+        setDepth(0);
+    }
+    
     /**
      * Initialize a cylinder with width width, height height, and depth depth.
      * @param width the width of the cylinder

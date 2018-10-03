@@ -37,6 +37,12 @@ public class Sphere extends Shape implements IRenderer
 		this.radius = radius;
 	}
 	
+	public Sphere(IDialog messageBox)
+	{
+	    super(messageBox);
+	    setRadius(0);
+	}
+	
 	/**
 	 * Initialize a sphere with a radius of radius.
 	 * @param radius the radius of the sphere

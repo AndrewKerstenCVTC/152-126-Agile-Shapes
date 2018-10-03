@@ -17,5 +17,11 @@ public class ShapesTest
 		sphere.render();
 		cylinder.render();
 		cuboid.render();
+		
+		ShapeFactory factory = new ShapeFactory(new MessageBox());
+		
+		Shape factorySphere = factory.make(ShapeType.SPHERE);
+		Shape factoryCylinder = factory.make(ShapeType.CYLINDER);
+		Shape factoryCuboid = factory.make(ShapeType.CUBOID);
 	}
 }

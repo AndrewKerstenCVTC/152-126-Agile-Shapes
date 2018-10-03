@@ -67,6 +67,14 @@ public class Cylinder extends Shape implements IRenderer
         this.height = height;
     }
     
+    public Cylinder(IDialog messageBox)
+    {
+        super(messageBox);
+        
+        setRadius(0);
+        setHeight(0);
+    }
+    
     /**
      * Initialize a cylinder with radius radius and height height.
      * @param radius the radius of the cylinder
